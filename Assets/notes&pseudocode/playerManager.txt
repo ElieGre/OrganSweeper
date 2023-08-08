@@ -1,0 +1,22 @@
+private string inv = "empty";
+[SerializeField] private organPrefabs = List<GameObject>() {heart, lungs, kidney, liver, apendix, pancreas, intestines, bladder, bloodPack}; 
+
+// puts organ in the players hand (inventory)
+public void SetInv(string organ)
+{
+    inv = organ;
+    GameObject organInHand = Instantiate(organPrefabs.IndexAt(organ), transform.position, Quaterion.identity); 
+}
+
+// gets the organ the player is currently holding
+public string GetInv()
+{
+    return inv;
+}
+
+// removes organ from players hand
+public void RemoveInv(string organ)
+{
+    inv = "empty";
+    Destroy(organInHand);
+}
