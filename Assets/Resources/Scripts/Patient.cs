@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Patient : MonoBehaviour
+public class Patient : InteractableObject
 {
 	private enum State {Alive, Harvestable, Dead}
 	
@@ -53,29 +53,30 @@ public class Patient : MonoBehaviour
 		
 		LoseBlood((organsBad.Count * 0.16f + organsMissing.Count * 0.5f) * Time.deltaTime);
 		
-        if(inRange)
-        {
-			// Matt - I changed this code so that it can work with my UI. Change it if you want as long as necessary functions are called!
-            if(Input.GetKeyDown(KeyCode.E))
-            {
-				// Find the UI script on tag by finding a gameobject with tag "GameController" and accessing its PatientInfoUI script.
-				PatientInfoUI uiScript = GameObject.FindWithTag("GameController").GetComponent<PatientInfoUI>();
-				
-				// If we already have the patient info menu open, pressing E closes it.
-				if(uiScript.IsPatientInfoOpen())
-				{
-					if(!uiScript.gameObject.GetComponent<Skillcheck>().IsSkillCheckInProgress() && !uiScript.gameObject.GetComponent<LetterPopUp>().IsSkillCheckInProgress())
-					{
-						uiScript.ClosePatientInfo();
-					}
-				}
-				// Otherwise it calls a function to load patient data parsing a reference to current instance of script from which it is called (keyword "this").
-				else
-				{
-					uiScript.LoadPatient(this);
-				}
-            }
+        if(inRange && Input.GetKeyDown(KeyCode.E))
+        {	
+			Interact();         
         }
+    }
+
+    public override void Interact()
+    {
+        // Find the UI script on tag by finding a gameobject with tag "GameController" and accessing its PatientInfoUI script.
+		PatientInfoUI uiScript = GameObject.FindWithTag("GameController").GetComponent<PatientInfoUI>();
+		
+		// If we already have the patient info menu open, pressing E closes it.
+		if(uiScript.IsPatientInfoOpen())
+		{
+			if(!uiScript.gameObject.GetComponent<Skillcheck>().IsSkillCheckInProgress() && !uiScript.gameObject.GetComponent<LetterPopUp>().IsSkillCheckInProgress())
+			{
+				uiScript.ClosePatientInfo();
+			}
+		}
+		// Otherwise it calls a function to load patient data parsing a reference to current instance of script from which it is called (keyword "this").
+		else
+		{
+			uiScript.LoadPatient(this);
+		}
     }
 
     private void SpriteSetup()

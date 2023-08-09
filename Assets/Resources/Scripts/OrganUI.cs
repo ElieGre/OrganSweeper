@@ -62,10 +62,12 @@ public class OrganUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler 
 		patientInfoUI.ResetPatientInfo();
 	}
 	
-	public void Set(string organName, bool organMissing, Patient relatedPatient) {
+	public void Set(string organName, bool organMissing, Patient relatedPatient) 
+	{
 		this.organName = organName;
 		this.organMissing = organMissing;
 		this.relatedPatient = relatedPatient;
+		GameObject.Find("PatientSprite").GetComponent<Image>().sprite = relatedPatient.GetComponent<SpriteRenderer>().sprite;
 	}
 	
 	public void Reset() {
