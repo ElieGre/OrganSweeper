@@ -11,7 +11,7 @@ public class MenuUI : MonoBehaviour
   
     public void StartGame()
   {
-        SceneManager.LoadScene("Lvl1");
+        SceneManager.LoadScene("Lvl1new");
   }
   public void ShowTutorial()
   {
@@ -27,11 +27,6 @@ public class MenuUI : MonoBehaviour
     {
       SceneManager.LoadScene("StartMenu");
     }
-  
-  public void Amogus() {
-    if(!amogusPlayer.isPlaying)
-      amogusPlayer.Play();
-  }      
   
   public void Mole() {
 		if(!molePlayer.isPlaying)
