@@ -37,20 +37,31 @@ public class Patient : InteractableObject
 
     private void Update()
     {
-		if((currentState == State.Alive) && (organsBad.Count > 0 || organsMissing.Count > 0) && blood < 50) { 
+		if((currentState == State.Alive) && (organsBad.Count > 0 || organsMissing.Count > 0) && blood < 50) 
+        { 
 			float healthPercentage = blood / 100f;
 			if (healthPercentage < 0.1f)
+            {
 				warningImage.SetActive(Time.time % 0.5f < 0.25f);
+            }
 			else if (healthPercentage < 0.25f)
+            {
 				warningImage.SetActive(Time.time % 1f < 0.5f);
+            }
 			else
+            {
 				warningImage.SetActive(Time.time % 2f < 1f);
-		} else
-			warningImage.SetActive(false);
-		
+            }
+		} 
+        else
+        {
+            warningImage.SetActive(false);
+        }
+			
 		if(currentState == State.Dead)
+        {
 			return;
-		
+        }
 		LoseBlood((organsBad.Count * 0.16f + organsMissing.Count * 0.5f) * Time.deltaTime);
 		
         if(inRange && Input.GetKeyDown(KeyCode.E))
@@ -61,13 +72,13 @@ public class Patient : InteractableObject
 
     public override void Interact()
     {
-        // Find the UI script on tag by finding a gameobject with tag "GameController" and accessing its PatientInfoUI script.
-		PatientInfoUI uiScript = GameObject.FindWithTag("GameController").GetComponent<PatientInfoUI>();
+        // Find the UI script on tag by finding a gameobject with tag "GameController" and accessing its SurgeryUI script.
+		SurgeryUI uiScript = GameObject.FindWithTag("GameController").GetComponent<SurgeryUI>();
 		
 		// If we already have the patient info menu open, pressing E closes it.
 		if(uiScript.IsPatientInfoOpen())
 		{
-			if(!uiScript.gameObject.GetComponent<Skillcheck>().IsSkillCheckInProgress() && !uiScript.gameObject.GetComponent<LetterPopUp>().IsSkillCheckInProgress())
+			if(!uiScript.gameObject.GetComponent<SkillCheckRemoveOrgan>().IsSkillCheckInProgress() && !uiScript.gameObject.GetComponent<LetterPopUp>().IsSkillCheckInProgress())
 			{
 				uiScript.ClosePatientInfo();
 			}
@@ -83,14 +94,14 @@ public class Patient : InteractableObject
     {
 		while(true) 
 		{
-		  sprite = Random.Range(0,patients.Length);
+	        sprite = Random.Range(0,patients.Length);
 		  
-		  // If we did not use that number, marked it as used and break out of loop.
-		  if(!usedIndexes.Contains(sprite))
-		  {
-			usedIndexes.Add(sprite);
-			break;
-		  }
+		    // If we did not use that number, marked it as used and break out of loop.
+		    if(!usedIndexes.Contains(sprite))
+		    {
+			    usedIndexes.Add(sprite);
+			    break;
+		    }
 		}
         GetComponent<SpriteRenderer>().sprite = patients[sprite];
     }
@@ -100,7 +111,8 @@ public class Patient : InteractableObject
         age = Random.Range(1,101);
     }
 
-	private void OnDisable() {
+	private void OnDisable() 
+    {
 		usedIndexes = new List<int>();
 	}
 	
@@ -144,8 +156,9 @@ public class Patient : InteractableObject
     public void RemoveOrgan(string organ)
     {
 		if(currentState == State.Dead)
+        {
 			return;
-		
+        }
         organsMissing.Add(organ);
 		// Matt - added a check to see which list the organ is to remove it from the correct list. Added a way to parse that info to inventory manager.
 		bool organHealthy;
@@ -198,19 +211,22 @@ public class Patient : InteractableObject
 		if(blood > amount)
 		{
 			blood -= amount;
-		} else
+		} 
+        else
 		{
 			blood -= blood;
 		}
 		
-		if(blood == 0 && currentState == State.Alive) {
+		if(blood == 0 && currentState == State.Alive) 
+        {
 			currentState = State.Harvestable;
 			GetComponent<SpriteRenderer>().sprite = harvestablePatient;
 			Invoke("Die", 30);
 		}
 	}
 	
-	public void Die() {
+	public void Die() 
+    {
 		currentState = State.Dead;
 		GetComponent<SpriteRenderer>().sprite = deadPatient;
         interactImage.SetActive(false);
@@ -219,8 +235,10 @@ public class Patient : InteractableObject
     private void OnTriggerEnter2D(Collider2D collision)
     {
 		if(currentState == State.Dead)
+        {
 			return;
-		
+        }
+
         interactImage.SetActive(true);
         inRange = true;
     }
@@ -228,8 +246,10 @@ public class Patient : InteractableObject
     private void OnTriggerExit2D(Collider2D collision)
     {
 		if(currentState == State.Dead)
+        {
 			return;
-		
+        }
+
         interactImage.SetActive(false);
         inRange = false;
     }
@@ -249,15 +269,18 @@ public class Patient : InteractableObject
         return organsMissing;
     }
 	
-	public bool IsAlive() {
+	public bool IsAlive() 
+    {
 		return currentState == State.Alive;
 	}
 	
-	public bool IsDead() {
+	public bool IsDead() 
+    {
 		return currentState == State.Dead;
 	}
 	
-	public bool IsHarvestable() {
+	public bool IsHarvestable() 
+    {
 		return currentState == State.Harvestable;
 	}
 }

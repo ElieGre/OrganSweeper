@@ -52,23 +52,22 @@ public class PauseManager : MonoBehaviour
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
- private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-{
-    if (scene.name == "Lvl1")
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        // Reset pause state and mechanics for Lvl1
-        isPaused = false;
-        Time.timeScale = 1f;
-        pauseMenu.SetActive(false);
-
+        if (scene.name == "Lvl1")
+        {
+            // Reset pause state and mechanics for Lvl1
+            isPaused = false;
+            Time.timeScale = 1f;
+            pauseMenu.SetActive(false);
+        }
+        else
+        {
+            // Disable pause state and mechanics for other scenes
+            isPaused = false;
+            Time.timeScale = 1f;
+            pauseMenu.SetActive(false);
+        }
     }
-    else
-    {
-        // Disable pause state and mechanics for other scenes
-        isPaused = false;
-        Time.timeScale = 1f;
-        pauseMenu.SetActive(false);
-    }
-}
 
 }

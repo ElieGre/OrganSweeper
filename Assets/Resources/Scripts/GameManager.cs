@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
 	
 	[SerializeField] private GameObject endScreen;
 	[SerializeField] private GameObject checkpoint;
-	[SerializeField] private GameObject checkpointDDR	;
+	[SerializeField] private GameObject checkpointDDR;
 	[SerializeField] private GameObject patientInfo;
 	[SerializeField] private TMP_Text saved;
 	[SerializeField] private TMP_Text died;
@@ -29,31 +29,41 @@ public class GameManager : MonoBehaviour
 			patientsHealthy = 0;
 			patientsSick = 0;
 			
-			foreach(Patient patient in patients) {
+			foreach(Patient patient in patients) 
+            {
 				if(patient.IsDead() || patient.IsHarvestable())
+                {
 					patientsDead++;
+                }
 				else if(patient.GetOrgansHealthy().Count == 8)
+                {
 					patientsHealthy++;
+                }
 				else
+                {
 					patientsSick++;
+                }
 			}
 			
 			if(patientsSick == 0)
+            {
 				GameOver();
-			
+            }
 			yield return new WaitForSeconds(1f);
 		}
     }
 	
-	void Update() {
-		if(gameOver && Input.GetKeyDown(KeyCode.Escape)) {
+	void Update() 
+    {
+		if(gameOver && Input.GetKeyDown(KeyCode.Escape)) 
+        {
 			Time.timeScale = 1;
 			SceneManager.LoadScene("StartMenu");
-			
 		}
 	}
 	
-	private void GameOver() {
+	private void GameOver() 
+    {
 		endScreen.SetActive(true);
 		checkpoint.SetActive(false);
 		checkpointDDR.SetActive(false);
@@ -66,7 +76,8 @@ public class GameManager : MonoBehaviour
 		died.text = patientsDead.ToString();	
 	}
 	
-	public bool IsGameOver() {
+	public bool IsGameOver() 
+    {
 		return gameOver;
 	}
 }

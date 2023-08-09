@@ -7,16 +7,17 @@ using UnityEngine.SceneManagement;
 
 public class MenuUI : MonoBehaviour
 {
-  [SerializeField]private AudioSource amogusPlayer, molePlayer;
-  
+    [SerializeField]private AudioSource amogusPlayer, molePlayer;
+    
     public void StartGame()
-  {
+    {
         SceneManager.LoadScene("Lvl1new");
-  }
-  public void ShowTutorial()
-  {
-    SceneManager.LoadScene("Tutorial");
-  }
+    }
+
+    public void ShowTutorial()
+    {
+        SceneManager.LoadScene("Tutorial");
+    }
 
     public void QuitGame()
     {
@@ -25,11 +26,14 @@ public class MenuUI : MonoBehaviour
 
     public void MainMenu()
     {
-      SceneManager.LoadScene("StartMenu");
+        SceneManager.LoadScene("StartMenu");
     }
-  
-  public void Mole() {
-		if(!molePlayer.isPlaying)
-		  molePlayer.Play();
-  }      
+    
+    public void Mole() 
+    {
+        if(!molePlayer.isPlaying)
+        {
+            molePlayer.Play();
+        }   
+    }      
 }

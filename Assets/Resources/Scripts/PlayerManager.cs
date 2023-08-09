@@ -63,8 +63,8 @@ public class PlayerManager : MonoBehaviour
 		animator.SetFloat("Vertical", savedDirection.y);
 
 		// Matt - added this so that you can't move if you got patient info open. Change it if you want as long as necessary functions are called!
-		// Find the UI script on tag by finding a gameobject with tag "GameController" and accessing its PatientInfoUI script.
-		PatientInfoUI uiScript = GameObject.FindWithTag("GameController").GetComponent<PatientInfoUI>();
+		// Find the UI script on tag by finding a gameobject with tag "GameController" and accessing its SurgeryUI script.
+		SurgeryUI uiScript = GameObject.FindWithTag("GameController").GetComponent<SurgeryUI>();
 		// Replace movement vector with zero if you are viewing patient info right now.
 		if(uiScript.IsPatientInfoOpen())
         {

@@ -3,9 +3,11 @@ using UnityEngine;
 public static class OrganHelper {
 	
 	// Takes a string of an organ's name, returns its icon.
-    public static Sprite GetOrganIconByName(string organ, bool healthy) {
+    public static Sprite GetOrganIconByName(string organ, bool healthy) 
+    {
 		string healthyAdd = healthy ? "" : "Bad";
-        switch (organ) {
+        switch (organ) 
+        {
             case "heart":
                 return Resources.Load<Sprite>("Sprites/Organs/Heart" + healthyAdd) ;
             case "lungs":

@@ -7439,7 +7439,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1518394703}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c9d53e550bf3834a865116949ac6d59, type: 3}
+  m_Script: {fileID: 11500000, guid: a5a5c44a57500bd4c85f5b931ba077b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   parentObj: {fileID: 1294120083}
@@ -7494,7 +7494,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1518394703}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e057633109f07204caef659f59c29276, type: 3}
+  m_Script: {fileID: 11500000, guid: 03df13ef3be26a140ad8801bcbae4baf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   skillcheckParent: {fileID: 1113665054}

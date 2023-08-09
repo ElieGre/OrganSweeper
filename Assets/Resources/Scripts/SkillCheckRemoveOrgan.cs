@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Skillcheck : MonoBehaviour {
+public class SkillCheckRemoveOrgan : MonoBehaviour 
+{
 	[SerializeField] private GameObject skillcheckParent;
 	[SerializeField] private RectTransform skillcheckArrow;
 	[SerializeField] private RectTransform skillcheckSuccessArea;
@@ -14,30 +15,38 @@ public class Skillcheck : MonoBehaviour {
 	private Patient operatingPatient;
 	
 
-	void Start() {
+	void Start() 
+	{
 		skillcheckParent.SetActive(false);
 	}
 	
-    void Update() {
+    void Update() 
+	{
 		if(!skillcheckEnabled)
+		{
 			return;
+		}
 		
-		if(rotating) {
+		if(rotating) 
+		{
 			z += skillcheckSpeed * Time.deltaTime;
 			skillcheckArrow.eulerAngles = new Vector3(0, 0, z);
 		}
 		
-		if(Input.GetKeyDown(KeyCode.Space) && rotating) {
+		if(Input.GetKeyDown(KeyCode.Space) && rotating) 
+		{
 			rotating = false;
 			
 			if(Mathf.Abs(Mathf.DeltaAngle(z, successZ)) > 20)
+			{
 				operatingPatient.LoseBlood(30);
-			
+			}
 			Invoke("DisableSkillcheck", 0.5f);
 		}
     }
 
-	void EnableSkillcheck() {
+	void EnableSkillcheck() 
+	{
 		z = Random.Range(0, 360f);
 		successZ = Random.Range(0, 360f);
         skillcheckSpeed = Random.Range(300, 500);
@@ -48,17 +57,20 @@ public class Skillcheck : MonoBehaviour {
 		skillcheckSuccessArea.eulerAngles = new Vector3(0, 0, successZ);
 	}
 	
-	void DisableSkillcheck() {
+	void DisableSkillcheck() 
+	{
 		skillcheckParent.SetActive(false);
 		skillcheckEnabled = false;
 	}
 	
-	public void StartSkillcheck(Patient operatingPatient) {
+	public void StartSkillcheck(Patient operatingPatient) 
+	{
 		this.operatingPatient = operatingPatient;
 		EnableSkillcheck();
 	}
 	
-	public bool IsSkillCheckInProgress() {
+	public bool IsSkillCheckInProgress() 
+	{
 		return skillcheckEnabled;
 	}
 }
