@@ -12,14 +12,14 @@ public class OrganUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 	private Patient relatedPatient;
 	private SurgeryUI surgeryUI;
 	private SkillCheckRemoveOrgan skillcheck;
-	private LetterPopUp skillcheckDDR;
+	private SkillCheckAddOrgan skillcheckDDR;
 	private PlayerManager playerManager;
 	
 	void Start() 
 	{
 		surgeryUI = GameObject.FindWithTag("GameController").GetComponent<SurgeryUI>();
 		skillcheck = GameObject.FindWithTag("GameController").GetComponent<SkillCheckRemoveOrgan>();
-		skillcheckDDR = GameObject.FindWithTag("GameController").GetComponent<LetterPopUp>();
+		skillcheckDDR = GameObject.FindWithTag("GameController").GetComponent<SkillCheckAddOrgan>();
 		playerManager = GameObject.FindWithTag("Player").GetComponent<PlayerManager>();
 	}
 	

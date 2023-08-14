@@ -7410,7 +7410,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1518394703}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0bd73f0de5b5b404f805592ff10afcf0, type: 3}
+  m_Script: {fileID: 11500000, guid: 7510102fa38e2ef4ca8375844ddd92d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   skillcheckParent: {fileID: 1602544904}
@@ -9350,8 +9350,8 @@ Tilemap:
   - first: {x: -9, y: -4, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 1
-      m_TileSpriteIndex: 1
+      m_TileIndex: 0
+      m_TileSpriteIndex: 0
       m_TileMatrixIndex: 0
       m_TileColorIndex: 1
       m_TileObjectToInstantiateIndex: 65535
@@ -9370,8 +9370,8 @@ Tilemap:
   - first: {x: -9, y: -3, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 1
-      m_TileSpriteIndex: 1
+      m_TileIndex: 0
+      m_TileSpriteIndex: 0
       m_TileMatrixIndex: 0
       m_TileColorIndex: 1
       m_TileObjectToInstantiateIndex: 65535
@@ -9629,9 +9629,9 @@ Tilemap:
       m_AllTileFlags: 1073741825
   m_AnimatedTiles: {}
   m_TileAssetArray:
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
-  - m_RefCount: 16
+  - m_RefCount: 2
+    m_Data: {fileID: 11400000, guid: 46a116d6eac63a643b80c1b821764bd0, type: 2}
+  - m_RefCount: 14
     m_Data: {fileID: 11400000, guid: 127d6a8940603ee43be9b8bec2738b62, type: 2}
   - m_RefCount: 32
     m_Data: {fileID: 11400000, guid: 1951d0e20f188d345a4e76ddf967a92a, type: 2}
@@ -9644,9 +9644,9 @@ Tilemap:
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: 4f1f83216b9256a468e25c460a99f07f, type: 2}
   m_TileSpriteArray:
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
-  - m_RefCount: 16
+  - m_RefCount: 2
+    m_Data: {fileID: 21300000, guid: e342c9beb79d0a2419b927167651902f, type: 3}
+  - m_RefCount: 14
     m_Data: {fileID: 21300000, guid: d4677fe341a4d9b41a9753e52d01d36b, type: 3}
   - m_RefCount: 32
     m_Data: {fileID: 21300000, guid: 335d972ecc88bc94daf444585c37a948, type: 3}
@@ -11302,6 +11302,16 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
+  - first: {x: -9, y: -4, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 1
+      m_TileSpriteIndex: 0
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
   - first: {x: -8, y: -4, z: 0}
     second:
       serializedVersion: 2
@@ -11463,6 +11473,16 @@ Tilemap:
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
   - first: {x: 8, y: -4, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 1
+      m_TileSpriteIndex: 0
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
+  - first: {x: -9, y: -3, z: 0}
     second:
       serializedVersion: 2
       m_TileIndex: 1
@@ -12166,7 +12186,7 @@ Tilemap:
   m_TileAssetArray:
   - m_RefCount: 6
     m_Data: {fileID: 11400000, guid: 95532f469571bae438371081a3240ae6, type: 2}
-  - m_RefCount: 121
+  - m_RefCount: 123
     m_Data: {fileID: 11400000, guid: 5d955eeaea631b34dabde39c2ec28c10, type: 2}
   - m_RefCount: 4
     m_Data: {fileID: 11400000, guid: ed8cb2e4a2de0dd479c773333fc7e2b9, type: 2}
@@ -12175,7 +12195,7 @@ Tilemap:
   - m_RefCount: 2
     m_Data: {fileID: 11400000, guid: e7ee7c22cb373ce4f92c5c194d1013d6, type: 2}
   m_TileSpriteArray:
-  - m_RefCount: 121
+  - m_RefCount: 123
     m_Data: {fileID: 21300000, guid: 3f5c9b4024d577e45b3f0207a96d83fe, type: 3}
   - m_RefCount: 6
     m_Data: {fileID: 21300000, guid: 552dd67068d961d48a1b86e7ff72fefd, type: 3}
@@ -12186,7 +12206,7 @@ Tilemap:
   - m_RefCount: 2
     m_Data: {fileID: 21300000, guid: 56382e1e43bc0e9428dd33da9c80c24a, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 137
+  - m_RefCount: 139
     m_Data:
       e00: 1
       e01: 0
@@ -12205,7 +12225,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 137
+  - m_RefCount: 139
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   - m_RefCount: 0
     m_Data: {r: 4.9334e-41, g: 4.9334e-41, b: 4.9334e-41, a: 4.9334e-41}

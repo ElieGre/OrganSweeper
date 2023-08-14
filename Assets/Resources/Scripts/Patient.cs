@@ -78,7 +78,7 @@ public class Patient : InteractableObject
 		// If we already have the patient info menu open, pressing E closes it.
 		if(uiScript.IsPatientInfoOpen())
 		{
-			if(!uiScript.gameObject.GetComponent<SkillCheckRemoveOrgan>().IsSkillCheckInProgress() && !uiScript.gameObject.GetComponent<LetterPopUp>().IsSkillCheckInProgress())
+			if(!uiScript.gameObject.GetComponent<SkillCheckRemoveOrgan>().IsSkillCheckInProgress() && !uiScript.gameObject.GetComponent<SkillCheckAddOrgan>().IsSkillCheckInProgress())
 			{
 				uiScript.ClosePatientInfo();
 			}

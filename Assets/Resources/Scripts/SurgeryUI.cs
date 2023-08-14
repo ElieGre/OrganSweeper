@@ -12,7 +12,7 @@ public class SurgeryUI : MonoBehaviour
 	[SerializeField] private Image[] organConditions;
 	[SerializeField] private OrganUI[] organScripts;
 	private SkillCheckRemoveOrgan skillcheck;
-	private LetterPopUp skillcheckDDR;
+	private SkillCheckAddOrgan skillcheckDDR;
 	
 	[Space(10)]
 	
@@ -28,7 +28,7 @@ public class SurgeryUI : MonoBehaviour
 	void Start() 
 	{
 		skillcheck = GameObject.FindWithTag("GameController").GetComponent<SkillCheckRemoveOrgan>();
-		skillcheckDDR = GameObject.FindWithTag("GameController").GetComponent<LetterPopUp>();
+		skillcheckDDR = GameObject.FindWithTag("GameController").GetComponent<SkillCheckAddOrgan>();
 	}
 	
 	void Update() 
