@@ -11,6 +11,7 @@ public class PauseManager : Singleton<PauseManager>
     private void Start()
     {
         pauseMenu.SetActive(false); // Ensure the PauseMenu starts as inactive
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
     private void Update()
@@ -40,11 +41,6 @@ public class PauseManager : Singleton<PauseManager>
             Time.timeScale = 1f; // Resume the game
             pauseMenu.SetActive(false); // Deactivate the PauseMenu
         }
-    }
-
-    private void OnEnable()
-    {
-        SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
     private void OnDisable()
