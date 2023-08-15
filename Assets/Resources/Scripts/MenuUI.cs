@@ -2,19 +2,19 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class MenuUI : Singleton<MenuUI> {
-	[SerializeField] private AudioSource amogusPlayer, molePlayer; 
+	[SerializeField] private AudioSource molePlayer; 
 	 
 	public void StartGame() => 
-	SceneManager.LoadScene("Lvl1new"); 
+		SceneManager.LoadScene("Lvl1new"); 
 	 
 	public void ShowTutorial() => 
-	SceneManager.LoadScene("Tutorial"); 
+		SceneManager.LoadScene("Tutorial"); 
 	 
 	public void QuitGame() => 
-	Application.Quit(); 
+		Application.Quit(); 
 	 
 	public void MainMenu() => 
-	SceneManager.LoadScene("StartMenu"); 
+		SceneManager.LoadScene("StartMenu"); 
 	 
 	public void Mole()  {
 		if(!molePlayer.isPlaying) 

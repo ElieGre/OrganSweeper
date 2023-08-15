@@ -42,8 +42,9 @@ public class Patient : InteractableObject {
     }
 	
     private void Update() {
-		if((currentState == State.Alive) && (Organs.Any(organ => !organ.Healthy) || Organs.Count < System.Enum.GetNames(typeof(Organ.Type)).Length))
+		if((Organs.Any(organ => !organ.Healthy) || Organs.Count < System.Enum.GetNames(typeof(Organ.Type)).Length))
 			warningImage.SetActive(
+				currentState == State.Dead ? false :
 				Blood < 10 ? Time.time % 0.5f < 0.25f :
 				Blood < 25 ? Time.time % 1f < 0.5f :
 				Blood < 50 ? Time.time % 2f < 1f :
