@@ -1,77 +1,54 @@
 using UnityEngine;
 using System.Collections;
-using TMPro;
 using UnityEngine.SceneManagement;
+using System.Linq;
 
-public class GameManager : Singleton<GameManager>
-{
-    private int patientsHealthy, patientsSick, patientsDead;
-
+public class GameManager : Singleton<GameManager> {
 	private Patient[] patients = new Patient[12];
-	private bool gameOver;
+	public bool GameOver {private set; get;}
 	
 	[SerializeField] private GameObject endScreen, checkpoint, checkpointDDR, patientInfo;
-	[SerializeField] private TMP_Text saved, died;
-	
-	
-    IEnumerator Start()
-    {
+	[SerializeField] private TMPro.TMP_Text saved, died;
+
+    IEnumerator Start() {
+		
         patients = FindObjectsOfType<Patient>();
 		
 		while(true) {
-			patientsDead = 0;
-			patientsHealthy = 0;
-			patientsSick = 0;
+			yield return new WaitForSeconds(5f);
+			int patientsHealthy = 0, patientsSick = 0, patientsDead = 0;
 			
-			foreach(Patient patient in patients) 
-            {
-				if(patient.IsDead() || patient.IsHarvestable())
-                {
+			foreach(Patient patient in patients) {
+				if(patient.currentState == Patient.State.Dead || patient.currentState == Patient.State.Harvestable)
 					patientsDead++;
-                }
-				else if(patient.GetOrgansHealthy().Count == 8)
-                {
+				else if(!patient.Organs.Any(organ => !organ.Healthy) || patient.Organs.Count != System.Enum.GetNames(typeof(Organ.Type)).Length)
 					patientsHealthy++;
-                }
 				else
-                {
 					patientsSick++;
-                }
 			}
 			
 			if(patientsSick == 0)
-            {
-				GameOver();
-            }
-			yield return new WaitForSeconds(1f);
+				DisplayResults(patientsHealthy, patientsDead); 
 		}
     }
 	
-	void Update() 
-    {
-		if(gameOver && Input.GetKeyDown(KeyCode.Escape)) 
-        {
-			Time.timeScale = 1;
-			SceneManager.LoadScene("StartMenu");
-		}
-	}
-	
-	private void GameOver() 
-    {
+	private void DisplayResults(int patientsSaved, int patientsDied) {
 		endScreen.SetActive(true);
 		checkpoint.SetActive(false);
 		checkpointDDR.SetActive(false);
 		patientInfo.SetActive(false);
 		
 		Time.timeScale = 0;
-		gameOver = true;
+		GameOver = true;
 		
-		saved.text = patientsHealthy.ToString()	;
-		died.text = patientsDead.ToString();	
+		saved.text = patientsSaved.ToString();
+		died.text = patientsDied.ToString();	
 	}
 	
-	public bool IsGameOver() 
-    {
-		return gameOver;
+	void Update() {
+		if(GameOver && Input.GetKeyDown(KeyCode.Escape))
+			SceneManager.LoadScene("StartMenu");
 	}
+	
+	void OnDisable() => Time.timeScale = 1;
 }

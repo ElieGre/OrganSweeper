@@ -3,97 +3,39 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using TMPro;
 
-public class OrganUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler 
-{
+public class OrganUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler {
 	private bool mouseOver;
-	private bool organMissing;
-    private string organName = "";
 	
+	private Organ organ;
 	private Patient relatedPatient;
-	private SurgeryUI surgeryUI;
-	private SkillCheckRemoveOrgan skillcheck;
-	private SkillCheckAddOrgan skillcheckDDR;
-	private PlayerManager playerManager;
 	
-	void Start() 
-	{
-		surgeryUI = GameObject.FindWithTag("GameController").GetComponent<SurgeryUI>();
-		skillcheck = GameObject.FindWithTag("GameController").GetComponent<SkillCheckRemoveOrgan>();
-		skillcheckDDR = GameObject.FindWithTag("GameController").GetComponent<SkillCheckAddOrgan>();
-		playerManager = GameObject.FindWithTag("Player").GetComponent<PlayerManager>();
-	}
-	
-	void Update() 
-	{
+	void Update() {
 		if(Input.GetKeyDown(KeyCode.Mouse0))
-		{
 			ClickOnItem();
-		}
 	}
 	
-    public void OnPointerEnter(PointerEventData eventData) 
-	{
-		mouseOver = true;
-    }
+    public void OnPointerEnter(PointerEventData eventData) => mouseOver = true;
+    public void OnPointerExit(PointerEventData eventData) => mouseOver = false;
 	
-    public void OnPointerExit(PointerEventData eventData) 
-	{
-		mouseOver = false;
-    }
-	
-	void ClickOnItem () {
-		if(!mouseOver)
-		{
+	private void ClickOnItem () {
+		if(!mouseOver || relatedPatient.currentState == Patient.State.Dead || (organ == null) == (PlayerManager.Instance.OrganInHand == null))
 			return;
-		}
-		
-		if(organName == "")
-		{
-			return;
-		}
-		
-		if(relatedPatient.IsDead())
-		{
-			return;
-		}
 
-		if(organMissing && playerManager.GetInv() != organName)
-		{
-			return;
-		}
-
-		if((playerManager.GetInv() == "empty" && organMissing) || (playerManager.GetInv() != "empty" && !organMissing))
-		{
-			return;
-		}
-			
-		if(!organMissing) 
-		{
-			relatedPatient.RemoveOrgan(organName);
-			skillcheck.StartSkillcheck(relatedPatient);
-		} 
-		else if(relatedPatient.IsAlive()) 
-		{
-			relatedPatient.ReplaceOrgan(organName);	
-			skillcheckDDR.StartSkillcheck(relatedPatient);
+		if(organ == null) {
+			relatedPatient.AddOrgan(PlayerManager.Instance.OrganInHand);
+			SkillCheckAddOrgan.Instance.StartSkillcheck(relatedPatient);
+		} else if(relatedPatient.currentState == Patient.State.Alive) {
+			relatedPatient.RemoveOrgan(organ);	
+			SkillCheckRemoveOrgan.Instance.StartSkillcheck(relatedPatient);
 		}
 		
-		surgeryUI.ResetPatientInfo();
+		SurgeryUI.Instance.ResetPatientInfo();
 	}
 	
-	public void Set(string organName, bool organMissing, Patient relatedPatient) 
-	{
-		this.organName = organName;
-		this.organMissing = organMissing;
+	public void Set(Organ organ, Patient relatedPatient) {
+		this.organ = organ;
 		this.relatedPatient = relatedPatient;
-		GameObject.Find("PatientSprite").GetComponent<Image>().sprite = relatedPatient.GetComponent<SpriteRenderer>().sprite;
 	}
 	
-	public void Reset() 
-	{
-		mouseOver = false;
-		organName = "";
-		relatedPatient = null;
-		organMissing = true;
-	}
+	public void Reset() => Set(null, null);
 }

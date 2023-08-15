@@ -1,102 +1,76 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class SurgeryUI : Singleton<SurgeryUI> 
-{
+public class SurgeryUI : Singleton<SurgeryUI> {
 	[SerializeField] private GameObject parentObj;
 	[SerializeField] private Image[] organSprites;
 	[SerializeField] private TMP_Text[] organTexts;
 	[SerializeField] private Image[] organConditions;
 	[SerializeField] private OrganUI[] organScripts;
-	private SkillCheckRemoveOrgan skillcheck;
-	private SkillCheckAddOrgan skillcheckDDR;
 	
 	[Space(10)]
 	
-	[SerializeField] private Image healthbarFillImage;
+	[SerializeField] private Image healthbarFillImage, patientSprite;
 	[SerializeField] private TMP_Text healthbarText;
 	
 	[SerializeField] private Sprite[] conditionSprites;
 	
-	private static List<string> organs = new List<string> {"heart", "lungs", "kidney", "liver", "appendix", "pancreas", "intestines", "bladder"};
-
 	private Patient patientReference;
 	
-	void Start() 
-	{
-		skillcheck = GameObject.FindWithTag("GameController").GetComponent<SkillCheckRemoveOrgan>();
-		skillcheckDDR = GameObject.FindWithTag("GameController").GetComponent<SkillCheckAddOrgan>();
-	}
-	
-	void Update() 
-	{
+	void Update() {
 		if((Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.E))
-			&& IsPatientInfoOpen() && !skillcheck.IsSkillCheckInProgress())
-		{
+		 && !SkillCheckAddOrgan.Instance.IsSkillCheckInProgress() && !SkillCheckRemoveOrgan.Instance.IsSkillCheckInProgress()) {
 			ClosePatientInfo();
 		}
-		if(patientReference != null) 
-		{
+		
+		if(patientReference != null) {
 			healthbarFillImage.fillAmount = patientReference.Blood / 100f;
 			healthbarText.text = (int)patientReference.Blood + "/" + 100;
 		}
 	}
 	
-    public void LoadPatient(Patient newPatient) 
-	{
+    public void LoadPatient(Patient newPatient) {
 		patientReference = newPatient;
 		parentObj.SetActive(true);
-		
 		ResetPatientInfo();
 	}
 	
-	public void ResetPatientInfo() 
-	{	
-		List<string> organsHealthy = patientReference.GetOrgansHealthy();
-		List<string> organsBad = patientReference.GetOrgansBad();
-		List<string> organsMissing = patientReference.GetOrgansMissing();
-		
-		int i = 0;
-		foreach(string organName in organs) 
-		{
-			bool organMissing = organsMissing.Contains(organName);
-			organScripts[i].Set(organName, organMissing, patientReference);
-			
-			organTexts[i].text = organName.Substring(0, 1).ToUpper() + organName.Substring(1);
-			if(organsHealthy.Contains(organName)) 
-			{
-				organSprites[i].sprite = OrganHelper.GetOrganIconByName(organName, true);
-				organConditions[i].sprite = conditionSprites[0];
-			} 
-			else if(organsBad.Contains(organName)) 
-			{
-				organSprites[i].sprite = OrganHelper.GetOrganIconByName(organName, false);
-				organConditions[i].sprite = conditionSprites[1];
-			} 
-			else 
-			{
-				organSprites[i].sprite = null;
-				organConditions[i].sprite = conditionSprites[2];
-			}
-			i++;
+	public void ResetPatientInfo() {	
+		// Set all organs to missing by default
+		for(int i = 0; i < organSprites.Length; i++) {
+			organScripts[i].Set(null, patientReference);
+			organSprites[i].sprite = null;
+			organConditions[i].sprite = conditionSprites[2];
 		}
+		
+		// Then check all organs we have and overwrite data where needed.
+		foreach(Organ organ in patientReference.Organs) {
+			if(organ == null)
+				continue;
+			
+			organScripts[(int)organ.OrganType].Set(organ, patientReference);
+			
+			organTexts[(int)organ.OrganType].text = organ.OrganType.ToString().Substring(0, 1).ToUpper() + organ.OrganType.ToString().Substring(1);
+			organSprites[(int)organ.OrganType].sprite = OrganHelper.GetOrganIcon(organ);
+			organConditions[(int)organ.OrganType].sprite = organ.Healthy ? conditionSprites[0] : conditionSprites[1];
+		}
+		
+		// Load patient image.
+		patientSprite.sprite = patientReference?.GetComponent<SpriteRenderer>()?.sprite;
 	}
 	
-	public bool IsPatientInfoOpen() 
-	{
-		return parentObj.activeSelf;
-	}
+	public bool IsPatientInfoOpen() => parentObj.activeSelf;
 	
-	public void ClosePatientInfo() 
-	{
+	public void ClosePatientInfo() {
+		if(!IsPatientInfoOpen())
+			return;
+		
 		parentObj.SetActive(false);
 		
 		foreach(OrganUI organScript in organScripts)
-		{
 			organScript.Reset();
-		}
+			
+		patientReference.Invoke("UnpreventInteraction", 0);
 	}
 }

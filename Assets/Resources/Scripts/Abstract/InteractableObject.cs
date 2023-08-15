@@ -8,7 +8,7 @@ public abstract class InteractableObject : MonoBehaviour {
 	private void OnTriggerStay2D() => ShowTooltip(true);
     private void OnTriggerExit2D() => ShowTooltip(false);
 	
-	protected void ShowTooltip(bool value) {
+	private void ShowTooltip(bool value) {
 		if(interactionPrevented && value)
 			return;
 		
@@ -16,8 +16,11 @@ public abstract class InteractableObject : MonoBehaviour {
         interactImage.SetActive(inRange);
 	}
 	
+	protected void PreventInteraction() => PreventInteraction(true);
+	protected void UnpreventInteraction() => PreventInteraction(false);
+	
 	protected void PreventInteraction(bool value) {
-		if(!value)
+		if(value)
 			ShowTooltip(false);
 		
 		interactionPrevented = value;
