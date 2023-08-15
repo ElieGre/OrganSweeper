@@ -33,7 +33,8 @@ public class SurgeryUI : Singleton<SurgeryUI>
 	
 	void Update() 
 	{
-		if(Input.GetKeyDown(KeyCode.Escape) && IsPatientInfoOpen() && !skillcheck.IsSkillCheckInProgress())
+		if((Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.E))
+			&& IsPatientInfoOpen() && !skillcheck.IsSkillCheckInProgress())
 		{
 			ClosePatientInfo();
 		}

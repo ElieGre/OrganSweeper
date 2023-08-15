@@ -14,21 +14,16 @@ public class Patient : InteractableObject
     [SerializeField] private Sprite[] patients;
     [SerializeField] private Sprite harvestablePatient;
     [SerializeField] private Sprite deadPatient;
-    [SerializeField] private GameObject interactImage, warningImage;
-    private bool inRange = false;
+    [SerializeField] private GameObject warningImage;
     private bool isStable;
     private float blood;
     private int age;
     private int sprite;
-    private PlayerManager playerManager;
 	private State currentState = State.Alive;
 	
 	private static List<int> usedIndexes = new List<int>();
 
-    private void Start()
-    {
-        playerManager = GameObject.FindWithTag("Player").GetComponent<PlayerManager>();
-        interactImage.SetActive(false);
+    private void Start() {
         SpriteSetup();
         AgeSetup();
         OrganSetup();
@@ -63,30 +58,18 @@ public class Patient : InteractableObject
 			return;
         }
 		LoseBlood((organsBad.Count * 0.16f + organsMissing.Count * 0.5f) * Time.deltaTime);
-		
-        if(inRange && Input.GetKeyDown(KeyCode.E))
-        {	
-			Interact();         
-        }
     }
 
-    public override void Interact()
-    {
-        // Find the UI script on tag by finding a gameobject with tag "GameController" and accessing its SurgeryUI script.
-		SurgeryUI uiScript = GameObject.FindWithTag("GameController").GetComponent<SurgeryUI>();
+    protected override void Interact() {
 		
 		// If we already have the patient info menu open, pressing E closes it.
-		if(uiScript.IsPatientInfoOpen())
-		{
-			if(!uiScript.gameObject.GetComponent<SkillCheckRemoveOrgan>().IsSkillCheckInProgress() && !uiScript.gameObject.GetComponent<SkillCheckAddOrgan>().IsSkillCheckInProgress())
-			{
-				uiScript.ClosePatientInfo();
+		if(SurgeryUI.Instance.IsPatientInfoOpen()) {
+			if(!SkillCheckRemoveOrgan.Instance.IsSkillCheckInProgress() && 
+				!SkillCheckAddOrgan.Instance.IsSkillCheckInProgress()) {
+				SurgeryUI.Instance.ClosePatientInfo();
 			}
-		}
-		// Otherwise it calls a function to load patient data parsing a reference to current instance of script from which it is called (keyword "this").
-		else
-		{
-			uiScript.LoadPatient(this);
+		} else {
+			SurgeryUI.Instance.LoadPatient(this);
 		}
     }
 
@@ -153,14 +136,12 @@ public class Patient : InteractableObject
     }
 
     // finds organ parameter in organsHealthy and moves it to organsMissing
-    public void RemoveOrgan(string organ)
-    {
+    public void RemoveOrgan(string organ) {
 		if(currentState == State.Dead)
-        {
 			return;
-        }
+		
         organsMissing.Add(organ);
-		// Matt - added a check to see which list the organ is to remove it from the correct list. Added a way to parse that info to inventory manager.
+
 		bool organHealthy;
 		if(organsBad.Contains(organ))
 		{
@@ -172,7 +153,7 @@ public class Patient : InteractableObject
 			organHealthy = true;
 			organsHealthy.RemoveAt(organsHealthy.IndexOf(organ));
 		}
-        playerManager.SetInv(organ, organHealthy);
+        PlayerManager.Instance.SetInv(organ, organHealthy);
     }
 
     // finds organ parameter in organsBad and moves it to Healthy
@@ -182,7 +163,7 @@ public class Patient : InteractableObject
 			return;
 		
 		// Matt - added check whether inventory item is healthy.
-		if(playerManager.GetHealthy()) 
+		if(PlayerManager.Instance.GetHealthy()) 
 		{
 			organsHealthy.Add(organ);
 		}
@@ -192,7 +173,7 @@ public class Patient : InteractableObject
 		}
         organsMissing.RemoveAt(organsMissing.IndexOf(organ));
 		
-        playerManager.RemoveInv(organ);
+        PlayerManager.Instance.RemoveInv(organ);
     }
 
     // removes 10 blood and gives the player a blood pack
@@ -201,11 +182,10 @@ public class Patient : InteractableObject
         if(blood>20)
         {
             LoseBlood(10);
-            playerManager.SetInv("bloodPack", true);
+            PlayerManager.Instance.SetInv("bloodPack", true);
         } 
     }
 	
-	// Matt - added so that missed skill checks have a blood loss penalty.
 	public void LoseBlood(float amount)
 	{
 		if(blood > amount)
@@ -228,31 +208,9 @@ public class Patient : InteractableObject
 	public void Die() 
     {
 		currentState = State.Dead;
+		PreventInteraction(true);
 		GetComponent<SpriteRenderer>().sprite = deadPatient;
-        interactImage.SetActive(false);
 	}
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-		if(currentState == State.Dead)
-        {
-			return;
-        }
-
-        interactImage.SetActive(true);
-        inRange = true;
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-		if(currentState == State.Dead)
-        {
-			return;
-        }
-
-        interactImage.SetActive(false);
-        inRange = false;
-    }
 
     public List<string> GetOrgansHealthy()
     {
@@ -269,18 +227,7 @@ public class Patient : InteractableObject
         return organsMissing;
     }
 	
-	public bool IsAlive() 
-    {
-		return currentState == State.Alive;
-	}
-	
-	public bool IsDead() 
-    {
-		return currentState == State.Dead;
-	}
-	
-	public bool IsHarvestable() 
-    {
-		return currentState == State.Harvestable;
-	}
+	public bool IsAlive() => currentState == State.Alive;
+	public bool IsDead() => currentState == State.Dead;
+	public bool IsHarvestable() => currentState == State.Harvestable;
 }
