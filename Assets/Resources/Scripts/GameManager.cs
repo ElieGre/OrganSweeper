@@ -18,7 +18,8 @@ public class GameManager : Singleton<GameManager>
     {
         patients = FindObjectsOfType<Patient>();
 		
-		while(true) {
+		while(true) 
+        {
 			patientsDead = 0;
 			patientsHealthy = 0;
 			patientsSick = 0;

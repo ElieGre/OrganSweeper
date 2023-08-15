@@ -1,12 +1,15 @@
 using UnityEngine;
 
-public class Garbage : InteractableObject {
+public class Garbage : InteractableObject 
+{
 	
-	private void Update() {
+	private void Update() 
+    {
 		PreventInteraction(PlayerManager.Instance.GetInv() == "empty");
 	}
 	
-	protected override void Interact() {
+	protected override void Interact() 
+    {
 		PlayerManager.Instance.SetInv("empty", false);
 	}
 }

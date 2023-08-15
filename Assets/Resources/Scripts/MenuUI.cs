@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class MenuUI : Singleton<MenuUI>
 {
-    [SerializeField]private AudioSource amogusPlayer, molePlayer;
+    [SerializeField]private AudioSource molePlayer;
     
     public void StartGame()
     {
