@@ -35,6 +35,7 @@ public class OrganUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler 
 	public void Set(Organ organ, Patient relatedPatient) {
 		this.organ = organ;
 		this.relatedPatient = relatedPatient;
+		mouseOver = false;
 	}
 	
 	public void Reset() => Set(null, null);
