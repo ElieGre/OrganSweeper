@@ -2,15 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerManager : Singleton<PlayerManager>
-{
-    private string inv = "empty";
+public class PlayerManager : Singleton<PlayerManager> {
+    public Organ organInHand {get; private set;}
     private Rigidbody2D rb;
     private Animator animator;
     private Vector2 savedDirection;
 	
 	// Matt - replaced gameobject instantiation with sprite swapping. 
-    [SerializeField] private SpriteRenderer organInHand;
+    [SerializeField] private SpriteRenderer organSprite;
 	// Matt - added a way to store whether an organ we're carrying right now is good or bad.
 	private bool organHealthy;
 
@@ -21,33 +20,22 @@ public class PlayerManager : Singleton<PlayerManager>
     }
 
     // puts organ in the players hand (inventory)
-    public void SetInv(string organ, bool healthy)
+    public void SetOrganInHand(string organ, bool healthy)
     {
         inv = organ;
-		// Matt - added a way to store whether an organ we're carrying right now is good or bad.
 		organHealthy = healthy;
 		
-		// Matt - replaced gameobject instantiation with sprite swapping.
-        organInHand.sprite = OrganHelper.GetOrganIconByName(organ, healthy);
-    }
-
-    // gets the organ the player is currently holding
-    public string GetInv()
-    {
-        return inv;
-    }
+        organSprite.sprite = OrganHelper.GetOrganIconByName(organ, healthy);
+    } 
 	
-	// Matt - added a way to store whether an organ we're carrying right now is good or bad.
 	public bool GetHealthy()
 	{
 		return organHealthy;
 	}
 
-    // removes organ from players hand
-    public void RemoveInv(string organ)
-    {
-        inv = "empty";
-		organInHand.sprite = null;
+    public void RemoveOrganInHand() {
+        organInHand
+		organSprite.sprite = null;
     }
 
     private void FixedUpdate()

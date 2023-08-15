@@ -1,33 +1,27 @@
 using UnityEngine;
 
 public static class OrganHelper {
-	
-	// Takes a string of an organ's name, returns its icon.
-    public static Sprite GetOrganIconByName(string organ, bool healthy) 
-    {
-		string healthyAdd = healthy ? "" : "Bad";
-        switch (organ) 
-        {
-            case "heart":
+    public static Sprite GetOrganIcon(Organ organ) {
+		string healthyAdd = organ.Healthy ? "" : "Bad";
+        switch (organ.OrganType) {
+            case Organ.Type.Heart:
                 return Resources.Load<Sprite>("Sprites/Organs/Heart" + healthyAdd) ;
-            case "lungs":
+            case Organ.Type.Lungs:
                 return Resources.Load<Sprite>("Sprites/Organs/Lungs" + healthyAdd);
-            case "kidney":
+            case Organ.Type.Kidney:
                 return Resources.Load<Sprite>("Sprites/Organs/Kidney" + healthyAdd);
-            case "liver":
+            case Organ.Type.Liver:
                 return Resources.Load<Sprite>("Sprites/Organs/Liver" + healthyAdd);
-            case "appendix":
+            case Organ.Type.Appendix:
                 return Resources.Load<Sprite>("Sprites/Organs/Appedix" + healthyAdd);
-            case "pancreas":
+            case Organ.Type.Pancreas:
                 return Resources.Load<Sprite>("Sprites/Organs/Pancreas" + healthyAdd);
-            case "intestines":
+            case Organ.Type.Intestines:
                 return Resources.Load<Sprite>("Sprites/Organs/Intestines" + healthyAdd);
-            case "bladder":
+            case Organ.Type.Bladder:
                 return Resources.Load<Sprite>("Sprites/Organs/Bladder" + healthyAdd);
-            case "bloodPack":
-                return Resources.Load<Sprite>("Sprites/Organs/BloodPack" + healthyAdd);
-            case "empty":
-                return null;
+			case null:
+				return null;
             default:
                 Debug.LogError("Unknown organ: " + organ);
 				return null;

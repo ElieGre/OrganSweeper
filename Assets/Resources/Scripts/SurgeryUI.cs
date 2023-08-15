@@ -40,8 +40,8 @@ public class SurgeryUI : Singleton<SurgeryUI>
 		}
 		if(patientReference != null) 
 		{
-			healthbarFillImage.fillAmount = patientReference.GetBlood() / 100f;
-			healthbarText.text = (int)patientReference.GetBlood() + "/" + 100;
+			healthbarFillImage.fillAmount = patientReference.Blood / 100f;
+			healthbarText.text = (int)patientReference.Blood + "/" + 100;
 		}
 	}
 	
