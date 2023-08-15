@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class SkillCheckAddOrgan : MonoBehaviour 
+public class SkillCheckAddOrgan : Singleton<SkillCheckAddOrgan> 
 {
 	[SerializeField] private GameObject skillcheckParent;
 	[SerializeField] private TMP_Text letterText;

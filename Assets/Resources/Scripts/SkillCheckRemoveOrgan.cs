@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SkillCheckRemoveOrgan : MonoBehaviour 
+public class SkillCheckRemoveOrgan : Singleton<SkillCheckRemoveOrgan> 
 {
 	[SerializeField] private GameObject skillcheckParent;
 	[SerializeField] private RectTransform skillcheckArrow;

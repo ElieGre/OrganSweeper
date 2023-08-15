@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class SurgeryUI : MonoBehaviour 
+public class SurgeryUI : Singleton<SurgeryUI> 
 {
 	[SerializeField] private GameObject parentObj;
 	[SerializeField] private Image[] organSprites;

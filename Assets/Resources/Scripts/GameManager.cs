@@ -3,21 +3,15 @@ using System.Collections;
 using TMPro;
 using UnityEngine.SceneManagement;
 
-public class GameManager : MonoBehaviour
+public class GameManager : Singleton<GameManager>
 {
-    private int patientsHealthy;
-    private int patientsSick;
-    private int patientsDead;
+    private int patientsHealthy, patientsSick, patientsDead;
 
 	private Patient[] patients = new Patient[12];
 	private bool gameOver;
 	
-	[SerializeField] private GameObject endScreen;
-	[SerializeField] private GameObject checkpoint;
-	[SerializeField] private GameObject checkpointDDR;
-	[SerializeField] private GameObject patientInfo;
-	[SerializeField] private TMP_Text saved;
-	[SerializeField] private TMP_Text died;
+	[SerializeField] private GameObject endScreen, checkpoint, checkpointDDR, patientInfo;
+	[SerializeField] private TMP_Text saved, died;
 	
 	
     IEnumerator Start()

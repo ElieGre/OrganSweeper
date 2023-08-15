@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
 
-public class MenuUI : MonoBehaviour
+public class MenuUI : Singleton<MenuUI>
 {
     [SerializeField]private AudioSource amogusPlayer, molePlayer;
     

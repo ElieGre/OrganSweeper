@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PauseManager : MonoBehaviour
+public class PauseManager : Singleton<PauseManager>
 {
     public GameObject pauseMenu;
     public GameObject player; // Assuming you have a player GameObject
