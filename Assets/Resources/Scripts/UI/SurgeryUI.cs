@@ -52,7 +52,7 @@ public class SurgeryUI : Singleton<SurgeryUI> {
 			organScripts[(int)organ.OrganType].Set(organ, patientReference);
 			
 			organTexts[(int)organ.OrganType].text = organ.OrganType.ToString().Substring(0, 1).ToUpper() + organ.OrganType.ToString().Substring(1);
-			organSprites[(int)organ.OrganType].sprite = OrganHelper.GetOrganIcon(organ);
+			organSprites[(int)organ.OrganType].sprite = organ.Icon;
 			organConditions[(int)organ.OrganType].sprite = organ.Healthy ? conditionSprites[0] : conditionSprites[1];
 		}
 		

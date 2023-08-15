@@ -13,7 +13,7 @@ public class PlayerManager : Singleton<PlayerManager> {
 
     public void SetOrganInHand(Organ organ) {
         OrganInHand = organ;
-        organSprite.sprite = OrganHelper.GetOrganIcon(organ);
+        organSprite.sprite = OrganInHand.Icon;
     }
 	
     public void RemoveOrganInHand() {

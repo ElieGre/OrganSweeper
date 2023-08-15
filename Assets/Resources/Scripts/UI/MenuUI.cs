@@ -18,6 +18,6 @@ public class MenuUI : Singleton<MenuUI> {
 	 
 	public void Mole()  {
 		if(!molePlayer.isPlaying) 
-		molePlayer.Play(); 
+			molePlayer.Play(); 
 	} 
 } 
