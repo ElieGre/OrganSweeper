@@ -6,12 +6,9 @@ public abstract class Singleton<MB> : MonoBehaviour where MB : Singleton<MB> {
     public static MB Instance {private set; get; }
 
 	protected virtual void OnEnable() {
-		if(Instance != null) {
+		if(Instance == null) 
+			Instance = this as MB;
+		else
 			Destroy(this.gameObject);
-			return;
-		}
-    
-        Instance = this as MB;
-        DontDestroyOnLoad(this.gameObject);
     }
 }
