@@ -69,8 +69,6 @@ public class Patient : InteractableObject {
     public void RemoveOrgan(Organ organ) {
 		if(currentState == State.Dead)
 			return;
-		
-		Debug.Log("Organ removed." + organ);
 	
 		PlayerManager.Instance.SetOrganInHand(organ);
 		
@@ -81,8 +79,6 @@ public class Patient : InteractableObject {
     public void AddOrgan(Organ organ) {
 		if(currentState != State.Alive)
 			return;
-		
-		Debug.Log("Organ added." + organ);
 		
 		Organs.Add(organ);
 		PlayerManager.Instance.RemoveOrganInHand();

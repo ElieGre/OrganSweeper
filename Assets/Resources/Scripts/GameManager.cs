@@ -15,13 +15,13 @@ public class GameManager : Singleton<GameManager> {
         patients = FindObjectsOfType<Patient>();
 		
 		while(true) {
-			yield return new WaitForSeconds(5f);
+			yield return new WaitForSeconds(1f);
 			int patientsHealthy = 0, patientsSick = 0, patientsDead = 0;
 			
 			foreach(Patient patient in patients) {
 				if(patient.currentState == Patient.State.Dead || patient.currentState == Patient.State.Harvestable)
 					patientsDead++;
-				else if(!patient.Organs.Any(organ => !organ.Healthy) || patient.Organs.Count != System.Enum.GetNames(typeof(Organ.Type)).Length)
+				else if(!patient.Organs.Any(organ => !organ.Healthy) && patient.Organs.Count == System.Enum.GetNames(typeof(Organ.Type)).Length)
 					patientsHealthy++;
 				else
 					patientsSick++;
