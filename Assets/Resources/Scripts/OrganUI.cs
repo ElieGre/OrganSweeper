@@ -21,12 +21,12 @@ public class OrganUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler 
 		if(!mouseOver || relatedPatient.currentState == Patient.State.Dead || (organ == null) == (PlayerManager.Instance.OrganInHand == null))
 			return;
 
-		if(organ == null) {
-			relatedPatient.AddOrgan(PlayerManager.Instance.OrganInHand);
-			SkillCheckAddOrgan.Instance.StartSkillcheck(relatedPatient);
-		} else if(relatedPatient.currentState == Patient.State.Alive) {
+		if(organ != null) {
 			relatedPatient.RemoveOrgan(organ);	
 			SkillCheckRemoveOrgan.Instance.StartSkillcheck(relatedPatient);
+		} else if(relatedPatient.currentState == Patient.State.Alive) {
+			relatedPatient.AddOrgan(PlayerManager.Instance.OrganInHand);
+			SkillCheckAddOrgan.Instance.StartSkillcheck(relatedPatient);
 		}
 		
 		SurgeryUI.Instance.ResetPatientInfo();
