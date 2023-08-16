@@ -34,7 +34,7 @@ public class SkillCheckAddOrgan : Singleton<SkillCheckAddOrgan>
             else
                 GenerateLetter();
         } else {
-			operatingPatient.LoseBlood(30);
+			operatingPatient.SkillcheckLoseHealth();
 			DisableSkillcheck();
         }
     }

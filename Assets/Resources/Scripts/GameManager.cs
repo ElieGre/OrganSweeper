@@ -21,7 +21,7 @@ public class GameManager : Singleton<GameManager> {
 			foreach(Patient patient in patients) {
 				if(patient.currentState == Patient.State.Dead || patient.currentState == Patient.State.Harvestable)
 					patientsDead++;
-				else if(!patient.Organs.Any(organ => !organ.Healthy) && patient.Organs.Count == System.Enum.GetNames(typeof(Organ.Type)).Length)
+				else if(!patient.Organs.Any(organ => !organ.Healthy) && patient.Organs.Count == (int)Organ.Type.Length)
 					patientsHealthy++;
 				else
 					patientsSick++;

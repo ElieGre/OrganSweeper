@@ -1,7 +1,7 @@
 using UnityEngine;
 
 public class Organ {
-	public enum Type {Heart, Lungs, Kidney, Liver, Appendix, Pancreas, Intestines, Bladder} 
+	public enum Type {Heart, Lungs, Kidney, Liver, Appendix, Pancreas, Intestines, Bladder, Length} 
 	 
 	public Type OrganType { private set; get; } 
 	public bool Healthy  { private set; get; } 

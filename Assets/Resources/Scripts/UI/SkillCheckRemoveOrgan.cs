@@ -30,7 +30,7 @@ public class SkillCheckRemoveOrgan : Singleton<SkillCheckRemoveOrgan>  {
 			rotating = false;
 			
 			if(Mathf.Abs(Mathf.DeltaAngle(z, successZ)) > 20)
-				operatingPatient.LoseBlood(30);
+				operatingPatient.SkillcheckLoseHealth();
 			
 			SurgeryUI.Instance.ResetPatientInfo();
 			Invoke("DisableSkillcheck", 0.5f);
