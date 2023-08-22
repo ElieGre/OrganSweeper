@@ -15,12 +15,12 @@ public class PauseManager : Singleton<PauseManager> {
 
     private void Update()
     {
-        if (SceneManager.GetActiveScene().name != "Lvl1")
+        if (SceneManager.GetActiveScene().name == "StartMenu")
         {
             return; // Don't allow pausing in other scenes
         }
 
-        if (Input.GetKeyDown(KeyCode.P))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             TogglePause();
         }
@@ -49,20 +49,9 @@ public class PauseManager : Singleton<PauseManager> {
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        if (scene.name == "Lvl1")
-        {
-            // Reset pause state and mechanics for Lvl1
-            isPaused = false;
-            Time.timeScale = 1f;
-            pauseMenu.SetActive(false);
-        }
-        else
-        {
-            // Disable pause state and mechanics for other scenes
-            isPaused = false;
-            Time.timeScale = 1f;
-            pauseMenu.SetActive(false);
-        }
+        isPaused = false;
+        Time.timeScale = 1f;
+        pauseMenu.SetActive(false);
     }
 
 }

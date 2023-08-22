@@ -952,26 +952,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactImage: {fileID: 976174383}
-  patients:
-  - {fileID: 21300000, guid: c5db4f1162803ce4c80ab36258908c10, type: 3}
-  - {fileID: 21300000, guid: 293db3dbb0ca891459f106c09f22b839, type: 3}
-  - {fileID: 21300000, guid: 959bb039ed3dbfc45b1771ef6583efea, type: 3}
-  - {fileID: 21300000, guid: b8072973d4985194faf062e1b214d720, type: 3}
-  - {fileID: 21300000, guid: 389f5b966b05c7547bdb7f70c7aab2c9, type: 3}
-  - {fileID: 21300000, guid: 5b8f87f06f6101c46b2dfc51646b51bf, type: 3}
-  - {fileID: 21300000, guid: f3c913e4f7b8dbe429af4ed4785dc0bc, type: 3}
-  - {fileID: 21300000, guid: 6393865aba74ade4984353207e80fd56, type: 3}
-  - {fileID: 21300000, guid: f5e4cf266ae3dfd4cb4b0feb7c8d715f, type: 3}
-  - {fileID: 21300000, guid: ba35c02dd7b155e458234124c73eae61, type: 3}
-  - {fileID: 21300000, guid: 5aa1ec2926bf67e45966ba238b548e1f, type: 3}
-  - {fileID: 21300000, guid: adc52aee61d02b247b09658045695169, type: 3}
-  - {fileID: 21300000, guid: bc13e02025782194bbfb8d7a3214b6ff, type: 3}
-  - {fileID: 21300000, guid: 3fc54c27b950a5645afed0c43dff7641, type: 3}
-  - {fileID: 21300000, guid: 4c6078c61ccd2dd4697d6742bd910052, type: 3}
-  - {fileID: 21300000, guid: c1e0f1e94cc7bca42bdab2835925f0a0, type: 3}
-  - {fileID: 21300000, guid: 1fd3a870ee35a4b41a0a98c43ca431b8, type: 3}
-  harvestablePatient: {fileID: 21300000, guid: f2806b84314e6174d9431aad116cecc2, type: 3}
-  deadPatient: {fileID: 21300000, guid: 2f6dbcd7d8e456443a7c2805f7921876, type: 3}
   warningImage: {fileID: 125470010}
 --- !u!1 &174330882 stripped
 GameObject:
@@ -1102,26 +1082,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactImage: {fileID: 271788747}
-  patients:
-  - {fileID: 21300000, guid: c5db4f1162803ce4c80ab36258908c10, type: 3}
-  - {fileID: 21300000, guid: 293db3dbb0ca891459f106c09f22b839, type: 3}
-  - {fileID: 21300000, guid: 959bb039ed3dbfc45b1771ef6583efea, type: 3}
-  - {fileID: 21300000, guid: b8072973d4985194faf062e1b214d720, type: 3}
-  - {fileID: 21300000, guid: 389f5b966b05c7547bdb7f70c7aab2c9, type: 3}
-  - {fileID: 21300000, guid: 5b8f87f06f6101c46b2dfc51646b51bf, type: 3}
-  - {fileID: 21300000, guid: f3c913e4f7b8dbe429af4ed4785dc0bc, type: 3}
-  - {fileID: 21300000, guid: 6393865aba74ade4984353207e80fd56, type: 3}
-  - {fileID: 21300000, guid: f5e4cf266ae3dfd4cb4b0feb7c8d715f, type: 3}
-  - {fileID: 21300000, guid: ba35c02dd7b155e458234124c73eae61, type: 3}
-  - {fileID: 21300000, guid: 5aa1ec2926bf67e45966ba238b548e1f, type: 3}
-  - {fileID: 21300000, guid: adc52aee61d02b247b09658045695169, type: 3}
-  - {fileID: 21300000, guid: bc13e02025782194bbfb8d7a3214b6ff, type: 3}
-  - {fileID: 21300000, guid: 3fc54c27b950a5645afed0c43dff7641, type: 3}
-  - {fileID: 21300000, guid: 4c6078c61ccd2dd4697d6742bd910052, type: 3}
-  - {fileID: 21300000, guid: c1e0f1e94cc7bca42bdab2835925f0a0, type: 3}
-  - {fileID: 21300000, guid: 1fd3a870ee35a4b41a0a98c43ca431b8, type: 3}
-  harvestablePatient: {fileID: 21300000, guid: f2806b84314e6174d9431aad116cecc2, type: 3}
-  deadPatient: {fileID: 21300000, guid: 2f6dbcd7d8e456443a7c2805f7921876, type: 3}
   warningImage: {fileID: 779851464}
 --- !u!1 &191845362
 GameObject:
@@ -3920,26 +3880,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactImage: {fileID: 925432057}
-  patients:
-  - {fileID: 21300000, guid: c5db4f1162803ce4c80ab36258908c10, type: 3}
-  - {fileID: 21300000, guid: 293db3dbb0ca891459f106c09f22b839, type: 3}
-  - {fileID: 21300000, guid: 959bb039ed3dbfc45b1771ef6583efea, type: 3}
-  - {fileID: 21300000, guid: b8072973d4985194faf062e1b214d720, type: 3}
-  - {fileID: 21300000, guid: 389f5b966b05c7547bdb7f70c7aab2c9, type: 3}
-  - {fileID: 21300000, guid: 5b8f87f06f6101c46b2dfc51646b51bf, type: 3}
-  - {fileID: 21300000, guid: f3c913e4f7b8dbe429af4ed4785dc0bc, type: 3}
-  - {fileID: 21300000, guid: 6393865aba74ade4984353207e80fd56, type: 3}
-  - {fileID: 21300000, guid: f5e4cf266ae3dfd4cb4b0feb7c8d715f, type: 3}
-  - {fileID: 21300000, guid: ba35c02dd7b155e458234124c73eae61, type: 3}
-  - {fileID: 21300000, guid: 5aa1ec2926bf67e45966ba238b548e1f, type: 3}
-  - {fileID: 21300000, guid: adc52aee61d02b247b09658045695169, type: 3}
-  - {fileID: 21300000, guid: bc13e02025782194bbfb8d7a3214b6ff, type: 3}
-  - {fileID: 21300000, guid: 3fc54c27b950a5645afed0c43dff7641, type: 3}
-  - {fileID: 21300000, guid: 4c6078c61ccd2dd4697d6742bd910052, type: 3}
-  - {fileID: 21300000, guid: c1e0f1e94cc7bca42bdab2835925f0a0, type: 3}
-  - {fileID: 21300000, guid: 1fd3a870ee35a4b41a0a98c43ca431b8, type: 3}
-  harvestablePatient: {fileID: 21300000, guid: f2806b84314e6174d9431aad116cecc2, type: 3}
-  deadPatient: {fileID: 21300000, guid: 2f6dbcd7d8e456443a7c2805f7921876, type: 3}
   warningImage: {fileID: 1002032092}
 --- !u!1 &645509933 stripped
 GameObject:
@@ -3959,26 +3899,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactImage: {fileID: 1215321792}
-  patients:
-  - {fileID: 21300000, guid: c5db4f1162803ce4c80ab36258908c10, type: 3}
-  - {fileID: 21300000, guid: 293db3dbb0ca891459f106c09f22b839, type: 3}
-  - {fileID: 21300000, guid: 959bb039ed3dbfc45b1771ef6583efea, type: 3}
-  - {fileID: 21300000, guid: b8072973d4985194faf062e1b214d720, type: 3}
-  - {fileID: 21300000, guid: 389f5b966b05c7547bdb7f70c7aab2c9, type: 3}
-  - {fileID: 21300000, guid: 5b8f87f06f6101c46b2dfc51646b51bf, type: 3}
-  - {fileID: 21300000, guid: f3c913e4f7b8dbe429af4ed4785dc0bc, type: 3}
-  - {fileID: 21300000, guid: 6393865aba74ade4984353207e80fd56, type: 3}
-  - {fileID: 21300000, guid: f5e4cf266ae3dfd4cb4b0feb7c8d715f, type: 3}
-  - {fileID: 21300000, guid: ba35c02dd7b155e458234124c73eae61, type: 3}
-  - {fileID: 21300000, guid: 5aa1ec2926bf67e45966ba238b548e1f, type: 3}
-  - {fileID: 21300000, guid: adc52aee61d02b247b09658045695169, type: 3}
-  - {fileID: 21300000, guid: bc13e02025782194bbfb8d7a3214b6ff, type: 3}
-  - {fileID: 21300000, guid: 3fc54c27b950a5645afed0c43dff7641, type: 3}
-  - {fileID: 21300000, guid: 4c6078c61ccd2dd4697d6742bd910052, type: 3}
-  - {fileID: 21300000, guid: c1e0f1e94cc7bca42bdab2835925f0a0, type: 3}
-  - {fileID: 21300000, guid: 1fd3a870ee35a4b41a0a98c43ca431b8, type: 3}
-  harvestablePatient: {fileID: 21300000, guid: f2806b84314e6174d9431aad116cecc2, type: 3}
-  deadPatient: {fileID: 21300000, guid: 2f6dbcd7d8e456443a7c2805f7921876, type: 3}
   warningImage: {fileID: 517988450}
 --- !u!1 &647037152
 GameObject:
@@ -4615,26 +4535,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactImage: {fileID: 1798949450}
-  patients:
-  - {fileID: 21300000, guid: c5db4f1162803ce4c80ab36258908c10, type: 3}
-  - {fileID: 21300000, guid: 293db3dbb0ca891459f106c09f22b839, type: 3}
-  - {fileID: 21300000, guid: 959bb039ed3dbfc45b1771ef6583efea, type: 3}
-  - {fileID: 21300000, guid: b8072973d4985194faf062e1b214d720, type: 3}
-  - {fileID: 21300000, guid: 389f5b966b05c7547bdb7f70c7aab2c9, type: 3}
-  - {fileID: 21300000, guid: 5b8f87f06f6101c46b2dfc51646b51bf, type: 3}
-  - {fileID: 21300000, guid: f3c913e4f7b8dbe429af4ed4785dc0bc, type: 3}
-  - {fileID: 21300000, guid: 6393865aba74ade4984353207e80fd56, type: 3}
-  - {fileID: 21300000, guid: f5e4cf266ae3dfd4cb4b0feb7c8d715f, type: 3}
-  - {fileID: 21300000, guid: ba35c02dd7b155e458234124c73eae61, type: 3}
-  - {fileID: 21300000, guid: 5aa1ec2926bf67e45966ba238b548e1f, type: 3}
-  - {fileID: 21300000, guid: adc52aee61d02b247b09658045695169, type: 3}
-  - {fileID: 21300000, guid: bc13e02025782194bbfb8d7a3214b6ff, type: 3}
-  - {fileID: 21300000, guid: 3fc54c27b950a5645afed0c43dff7641, type: 3}
-  - {fileID: 21300000, guid: 4c6078c61ccd2dd4697d6742bd910052, type: 3}
-  - {fileID: 21300000, guid: c1e0f1e94cc7bca42bdab2835925f0a0, type: 3}
-  - {fileID: 21300000, guid: 1fd3a870ee35a4b41a0a98c43ca431b8, type: 3}
-  harvestablePatient: {fileID: 21300000, guid: f2806b84314e6174d9431aad116cecc2, type: 3}
-  deadPatient: {fileID: 21300000, guid: 2f6dbcd7d8e456443a7c2805f7921876, type: 3}
   warningImage: {fileID: 1195561170}
 --- !u!1 &758747870
 GameObject:
@@ -5201,26 +5101,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactImage: {fileID: 1136658946}
-  patients:
-  - {fileID: 21300000, guid: c5db4f1162803ce4c80ab36258908c10, type: 3}
-  - {fileID: 21300000, guid: 293db3dbb0ca891459f106c09f22b839, type: 3}
-  - {fileID: 21300000, guid: 959bb039ed3dbfc45b1771ef6583efea, type: 3}
-  - {fileID: 21300000, guid: b8072973d4985194faf062e1b214d720, type: 3}
-  - {fileID: 21300000, guid: 389f5b966b05c7547bdb7f70c7aab2c9, type: 3}
-  - {fileID: 21300000, guid: 5b8f87f06f6101c46b2dfc51646b51bf, type: 3}
-  - {fileID: 21300000, guid: f3c913e4f7b8dbe429af4ed4785dc0bc, type: 3}
-  - {fileID: 21300000, guid: 6393865aba74ade4984353207e80fd56, type: 3}
-  - {fileID: 21300000, guid: f5e4cf266ae3dfd4cb4b0feb7c8d715f, type: 3}
-  - {fileID: 21300000, guid: ba35c02dd7b155e458234124c73eae61, type: 3}
-  - {fileID: 21300000, guid: 5aa1ec2926bf67e45966ba238b548e1f, type: 3}
-  - {fileID: 21300000, guid: adc52aee61d02b247b09658045695169, type: 3}
-  - {fileID: 21300000, guid: bc13e02025782194bbfb8d7a3214b6ff, type: 3}
-  - {fileID: 21300000, guid: 3fc54c27b950a5645afed0c43dff7641, type: 3}
-  - {fileID: 21300000, guid: 4c6078c61ccd2dd4697d6742bd910052, type: 3}
-  - {fileID: 21300000, guid: c1e0f1e94cc7bca42bdab2835925f0a0, type: 3}
-  - {fileID: 21300000, guid: 1fd3a870ee35a4b41a0a98c43ca431b8, type: 3}
-  harvestablePatient: {fileID: 21300000, guid: f2806b84314e6174d9431aad116cecc2, type: 3}
-  deadPatient: {fileID: 21300000, guid: 2f6dbcd7d8e456443a7c2805f7921876, type: 3}
   warningImage: {fileID: 414953677}
 --- !u!1 &1036565790
 GameObject:
@@ -5943,26 +5823,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactImage: {fileID: 1280839243}
-  patients:
-  - {fileID: 21300000, guid: c5db4f1162803ce4c80ab36258908c10, type: 3}
-  - {fileID: 21300000, guid: 293db3dbb0ca891459f106c09f22b839, type: 3}
-  - {fileID: 21300000, guid: 959bb039ed3dbfc45b1771ef6583efea, type: 3}
-  - {fileID: 21300000, guid: b8072973d4985194faf062e1b214d720, type: 3}
-  - {fileID: 21300000, guid: 389f5b966b05c7547bdb7f70c7aab2c9, type: 3}
-  - {fileID: 21300000, guid: 5b8f87f06f6101c46b2dfc51646b51bf, type: 3}
-  - {fileID: 21300000, guid: f3c913e4f7b8dbe429af4ed4785dc0bc, type: 3}
-  - {fileID: 21300000, guid: 6393865aba74ade4984353207e80fd56, type: 3}
-  - {fileID: 21300000, guid: f5e4cf266ae3dfd4cb4b0feb7c8d715f, type: 3}
-  - {fileID: 21300000, guid: ba35c02dd7b155e458234124c73eae61, type: 3}
-  - {fileID: 21300000, guid: 5aa1ec2926bf67e45966ba238b548e1f, type: 3}
-  - {fileID: 21300000, guid: adc52aee61d02b247b09658045695169, type: 3}
-  - {fileID: 21300000, guid: bc13e02025782194bbfb8d7a3214b6ff, type: 3}
-  - {fileID: 21300000, guid: 3fc54c27b950a5645afed0c43dff7641, type: 3}
-  - {fileID: 21300000, guid: 4c6078c61ccd2dd4697d6742bd910052, type: 3}
-  - {fileID: 21300000, guid: c1e0f1e94cc7bca42bdab2835925f0a0, type: 3}
-  - {fileID: 21300000, guid: 1fd3a870ee35a4b41a0a98c43ca431b8, type: 3}
-  harvestablePatient: {fileID: 21300000, guid: f2806b84314e6174d9431aad116cecc2, type: 3}
-  deadPatient: {fileID: 21300000, guid: 2f6dbcd7d8e456443a7c2805f7921876, type: 3}
   warningImage: {fileID: 482283518}
 --- !u!1 &1173089371 stripped
 GameObject:
@@ -6897,26 +6757,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactImage: {fileID: 71866911}
-  patients:
-  - {fileID: 21300000, guid: c5db4f1162803ce4c80ab36258908c10, type: 3}
-  - {fileID: 21300000, guid: 293db3dbb0ca891459f106c09f22b839, type: 3}
-  - {fileID: 21300000, guid: 959bb039ed3dbfc45b1771ef6583efea, type: 3}
-  - {fileID: 21300000, guid: b8072973d4985194faf062e1b214d720, type: 3}
-  - {fileID: 21300000, guid: 389f5b966b05c7547bdb7f70c7aab2c9, type: 3}
-  - {fileID: 21300000, guid: 5b8f87f06f6101c46b2dfc51646b51bf, type: 3}
-  - {fileID: 21300000, guid: f3c913e4f7b8dbe429af4ed4785dc0bc, type: 3}
-  - {fileID: 21300000, guid: 6393865aba74ade4984353207e80fd56, type: 3}
-  - {fileID: 21300000, guid: f5e4cf266ae3dfd4cb4b0feb7c8d715f, type: 3}
-  - {fileID: 21300000, guid: ba35c02dd7b155e458234124c73eae61, type: 3}
-  - {fileID: 21300000, guid: 5aa1ec2926bf67e45966ba238b548e1f, type: 3}
-  - {fileID: 21300000, guid: adc52aee61d02b247b09658045695169, type: 3}
-  - {fileID: 21300000, guid: bc13e02025782194bbfb8d7a3214b6ff, type: 3}
-  - {fileID: 21300000, guid: 3fc54c27b950a5645afed0c43dff7641, type: 3}
-  - {fileID: 21300000, guid: 4c6078c61ccd2dd4697d6742bd910052, type: 3}
-  - {fileID: 21300000, guid: c1e0f1e94cc7bca42bdab2835925f0a0, type: 3}
-  - {fileID: 21300000, guid: 1fd3a870ee35a4b41a0a98c43ca431b8, type: 3}
-  harvestablePatient: {fileID: 21300000, guid: f2806b84314e6174d9431aad116cecc2, type: 3}
-  deadPatient: {fileID: 21300000, guid: 2f6dbcd7d8e456443a7c2805f7921876, type: 3}
   warningImage: {fileID: 65485805}
 --- !u!1001 &1471483688
 PrefabInstance:
@@ -8212,26 +8052,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactImage: {fileID: 174330882}
-  patients:
-  - {fileID: 21300000, guid: c5db4f1162803ce4c80ab36258908c10, type: 3}
-  - {fileID: 21300000, guid: 293db3dbb0ca891459f106c09f22b839, type: 3}
-  - {fileID: 21300000, guid: 959bb039ed3dbfc45b1771ef6583efea, type: 3}
-  - {fileID: 21300000, guid: b8072973d4985194faf062e1b214d720, type: 3}
-  - {fileID: 21300000, guid: 389f5b966b05c7547bdb7f70c7aab2c9, type: 3}
-  - {fileID: 21300000, guid: 5b8f87f06f6101c46b2dfc51646b51bf, type: 3}
-  - {fileID: 21300000, guid: f3c913e4f7b8dbe429af4ed4785dc0bc, type: 3}
-  - {fileID: 21300000, guid: 6393865aba74ade4984353207e80fd56, type: 3}
-  - {fileID: 21300000, guid: f5e4cf266ae3dfd4cb4b0feb7c8d715f, type: 3}
-  - {fileID: 21300000, guid: ba35c02dd7b155e458234124c73eae61, type: 3}
-  - {fileID: 21300000, guid: 5aa1ec2926bf67e45966ba238b548e1f, type: 3}
-  - {fileID: 21300000, guid: adc52aee61d02b247b09658045695169, type: 3}
-  - {fileID: 21300000, guid: bc13e02025782194bbfb8d7a3214b6ff, type: 3}
-  - {fileID: 21300000, guid: 3fc54c27b950a5645afed0c43dff7641, type: 3}
-  - {fileID: 21300000, guid: 4c6078c61ccd2dd4697d6742bd910052, type: 3}
-  - {fileID: 21300000, guid: c1e0f1e94cc7bca42bdab2835925f0a0, type: 3}
-  - {fileID: 21300000, guid: 1fd3a870ee35a4b41a0a98c43ca431b8, type: 3}
-  harvestablePatient: {fileID: 21300000, guid: f2806b84314e6174d9431aad116cecc2, type: 3}
-  deadPatient: {fileID: 21300000, guid: 2f6dbcd7d8e456443a7c2805f7921876, type: 3}
   warningImage: {fileID: 1667148500}
 --- !u!1 &1789462102
 GameObject:
@@ -9655,26 +9475,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactImage: {fileID: 1173089371}
-  patients:
-  - {fileID: 21300000, guid: c5db4f1162803ce4c80ab36258908c10, type: 3}
-  - {fileID: 21300000, guid: 293db3dbb0ca891459f106c09f22b839, type: 3}
-  - {fileID: 21300000, guid: 959bb039ed3dbfc45b1771ef6583efea, type: 3}
-  - {fileID: 21300000, guid: b8072973d4985194faf062e1b214d720, type: 3}
-  - {fileID: 21300000, guid: 389f5b966b05c7547bdb7f70c7aab2c9, type: 3}
-  - {fileID: 21300000, guid: 5b8f87f06f6101c46b2dfc51646b51bf, type: 3}
-  - {fileID: 21300000, guid: f3c913e4f7b8dbe429af4ed4785dc0bc, type: 3}
-  - {fileID: 21300000, guid: 6393865aba74ade4984353207e80fd56, type: 3}
-  - {fileID: 21300000, guid: f5e4cf266ae3dfd4cb4b0feb7c8d715f, type: 3}
-  - {fileID: 21300000, guid: ba35c02dd7b155e458234124c73eae61, type: 3}
-  - {fileID: 21300000, guid: 5aa1ec2926bf67e45966ba238b548e1f, type: 3}
-  - {fileID: 21300000, guid: adc52aee61d02b247b09658045695169, type: 3}
-  - {fileID: 21300000, guid: bc13e02025782194bbfb8d7a3214b6ff, type: 3}
-  - {fileID: 21300000, guid: 3fc54c27b950a5645afed0c43dff7641, type: 3}
-  - {fileID: 21300000, guid: 4c6078c61ccd2dd4697d6742bd910052, type: 3}
-  - {fileID: 21300000, guid: c1e0f1e94cc7bca42bdab2835925f0a0, type: 3}
-  - {fileID: 21300000, guid: 1fd3a870ee35a4b41a0a98c43ca431b8, type: 3}
-  harvestablePatient: {fileID: 21300000, guid: f2806b84314e6174d9431aad116cecc2, type: 3}
-  deadPatient: {fileID: 21300000, guid: 2f6dbcd7d8e456443a7c2805f7921876, type: 3}
   warningImage: {fileID: 1303024345}
 --- !u!1 &1883922415 stripped
 GameObject:
@@ -9694,26 +9494,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactImage: {fileID: 814922651}
-  patients:
-  - {fileID: 21300000, guid: c5db4f1162803ce4c80ab36258908c10, type: 3}
-  - {fileID: 21300000, guid: 293db3dbb0ca891459f106c09f22b839, type: 3}
-  - {fileID: 21300000, guid: 959bb039ed3dbfc45b1771ef6583efea, type: 3}
-  - {fileID: 21300000, guid: b8072973d4985194faf062e1b214d720, type: 3}
-  - {fileID: 21300000, guid: 389f5b966b05c7547bdb7f70c7aab2c9, type: 3}
-  - {fileID: 21300000, guid: 5b8f87f06f6101c46b2dfc51646b51bf, type: 3}
-  - {fileID: 21300000, guid: f3c913e4f7b8dbe429af4ed4785dc0bc, type: 3}
-  - {fileID: 21300000, guid: 6393865aba74ade4984353207e80fd56, type: 3}
-  - {fileID: 21300000, guid: f5e4cf266ae3dfd4cb4b0feb7c8d715f, type: 3}
-  - {fileID: 21300000, guid: ba35c02dd7b155e458234124c73eae61, type: 3}
-  - {fileID: 21300000, guid: 5aa1ec2926bf67e45966ba238b548e1f, type: 3}
-  - {fileID: 21300000, guid: adc52aee61d02b247b09658045695169, type: 3}
-  - {fileID: 21300000, guid: bc13e02025782194bbfb8d7a3214b6ff, type: 3}
-  - {fileID: 21300000, guid: 3fc54c27b950a5645afed0c43dff7641, type: 3}
-  - {fileID: 21300000, guid: 4c6078c61ccd2dd4697d6742bd910052, type: 3}
-  - {fileID: 21300000, guid: c1e0f1e94cc7bca42bdab2835925f0a0, type: 3}
-  - {fileID: 21300000, guid: 1fd3a870ee35a4b41a0a98c43ca431b8, type: 3}
-  harvestablePatient: {fileID: 21300000, guid: f2806b84314e6174d9431aad116cecc2, type: 3}
-  deadPatient: {fileID: 21300000, guid: 2f6dbcd7d8e456443a7c2805f7921876, type: 3}
   warningImage: {fileID: 852493517}
 --- !u!1 &1889475063
 GameObject:
@@ -9963,26 +9743,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactImage: {fileID: 1357445178}
-  patients:
-  - {fileID: 21300000, guid: c5db4f1162803ce4c80ab36258908c10, type: 3}
-  - {fileID: 21300000, guid: 293db3dbb0ca891459f106c09f22b839, type: 3}
-  - {fileID: 21300000, guid: 959bb039ed3dbfc45b1771ef6583efea, type: 3}
-  - {fileID: 21300000, guid: b8072973d4985194faf062e1b214d720, type: 3}
-  - {fileID: 21300000, guid: 389f5b966b05c7547bdb7f70c7aab2c9, type: 3}
-  - {fileID: 21300000, guid: 5b8f87f06f6101c46b2dfc51646b51bf, type: 3}
-  - {fileID: 21300000, guid: f3c913e4f7b8dbe429af4ed4785dc0bc, type: 3}
-  - {fileID: 21300000, guid: 6393865aba74ade4984353207e80fd56, type: 3}
-  - {fileID: 21300000, guid: f5e4cf266ae3dfd4cb4b0feb7c8d715f, type: 3}
-  - {fileID: 21300000, guid: ba35c02dd7b155e458234124c73eae61, type: 3}
-  - {fileID: 21300000, guid: 5aa1ec2926bf67e45966ba238b548e1f, type: 3}
-  - {fileID: 21300000, guid: adc52aee61d02b247b09658045695169, type: 3}
-  - {fileID: 21300000, guid: bc13e02025782194bbfb8d7a3214b6ff, type: 3}
-  - {fileID: 21300000, guid: 3fc54c27b950a5645afed0c43dff7641, type: 3}
-  - {fileID: 21300000, guid: 4c6078c61ccd2dd4697d6742bd910052, type: 3}
-  - {fileID: 21300000, guid: c1e0f1e94cc7bca42bdab2835925f0a0, type: 3}
-  - {fileID: 21300000, guid: 1fd3a870ee35a4b41a0a98c43ca431b8, type: 3}
-  harvestablePatient: {fileID: 21300000, guid: f2806b84314e6174d9431aad116cecc2, type: 3}
-  deadPatient: {fileID: 21300000, guid: 2f6dbcd7d8e456443a7c2805f7921876, type: 3}
   warningImage: {fileID: 1999173506}
 --- !u!1 &1992074014
 GameObject:
