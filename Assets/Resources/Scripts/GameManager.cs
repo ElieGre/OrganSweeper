@@ -9,9 +9,11 @@ public class GameManager : Singleton<GameManager> {
 	
 	[SerializeField] private GameObject endScreen, checkpoint, checkpointDDR, patientInfo;
 	[SerializeField] private TMPro.TMP_Text saved, died;
+    private AudioManager am;
 
     IEnumerator Start() {
-		
+		am = FindObjectOfType<AudioManager>();
+        am.Play("MainTheme");
         patients = FindObjectsOfType<Patient>();
 		
 		while(true) {

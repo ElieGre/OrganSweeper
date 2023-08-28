@@ -2,8 +2,14 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class MenuUI : Singleton<MenuUI> {
-	[SerializeField] private AudioSource molePlayer; 
+	private AudioManager am; 
 	 
+    void Start()
+    {
+        am = FindObjectOfType<AudioManager>();
+        am.Play("MainMenuMusic");
+    } 
+
 	public void StartGame() => 
 		SceneManager.LoadScene("Lvl1new"); 
 	 
@@ -16,8 +22,4 @@ public class MenuUI : Singleton<MenuUI> {
 	public void MainMenu() => 
 		SceneManager.LoadScene("StartMenu"); 
 	 
-	public void Mole()  {
-		if(!molePlayer.isPlaying) 
-			molePlayer.Play(); 
-	} 
 } 
