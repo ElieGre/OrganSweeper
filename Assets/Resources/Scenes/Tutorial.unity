@@ -606,7 +606,7 @@ GameObject:
   - component: {fileID: 629685152}
   - component: {fileID: 629685151}
   m_Layer: 0
-  m_Name: MUSIC
+  m_Name: Music
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -622,7 +622,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 518cc12fb5da64e4cb400b14781522a3, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 4f9ff0c8901795244b762b8e5c269887, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -1105,7 +1105,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19c2808376b8ab94e9e6e4ce5006d563, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amogusPlayer: {fileID: 0}
   molePlayer: {fileID: 0}
 --- !u!1 &1915725735
 GameObject:
