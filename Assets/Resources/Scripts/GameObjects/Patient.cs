@@ -23,7 +23,7 @@ public class Patient : InteractableObject {
 	    int sprite;
 		while (usedSpriteIndexes.Contains(sprite = Random.Range(1, 18)));
 		usedSpriteIndexes.Add(sprite);
-        GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Patients/Patient" + sprite);
+        GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/People/Patients/Patient" + sprite);
 	}
 	
 	protected virtual void SetupBlood() =>
@@ -85,7 +85,7 @@ public class Patient : InteractableObject {
 		
 		if(Blood == 0 && currentState == State.Alive) {
 			currentState = State.Harvestable;
-			GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Patients/PatientHarvestable");
+			GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/People/Patients/PatientHarvestable");
 			HarvestableDelay();
 		}
 	}
@@ -94,7 +94,7 @@ public class Patient : InteractableObject {
 	
 	private void Die() {
 		currentState = State.Dead;
-		GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Patients/PatientDead");
+		GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/People/Patients/PatientDead");
 		PreventInteraction(true);
 	}
 }
