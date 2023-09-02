@@ -7,6 +7,13 @@ public class PauseManager : Singleton<PauseManager> {
 
     private bool isPaused = false;
 
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        isPaused = false;
+        Time.timeScale = 1f;
+        pauseMenu.SetActive(false);
+    }
+
     private void Start()
     {
         pauseMenu.SetActive(false); // Ensure the PauseMenu starts as inactive
@@ -46,12 +53,4 @@ public class PauseManager : Singleton<PauseManager> {
     {
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
-
-    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-    {
-        isPaused = false;
-        Time.timeScale = 1f;
-        pauseMenu.SetActive(false);
-    }
-
 }
